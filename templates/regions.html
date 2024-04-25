@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Map Uzbekistan</title>
+
+
+    <!-- css  link  start -->
+    <link rel="stylesheet" href="{% static 'regions.css' %}">
+    <!-- css  link  end -->
+
+
+    <!-- font awesome  start -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- font awesome  end -->
+
+    <!-- google fonts  start -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,500&display=swap"
+        rel="stylesheet">
+    <!-- google fonts  end -->
+
+    <!-- box icons start -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- box icons end -->
+
+</head>
+
+<body>
+    <!-- sidebar ***************************************** -->
+    <div class="row">
+        <div class="sidebar">
+            <div class="sidebar-body">
+                <form class="links-wrapper" method="get" , action="/region/">
+                    <input type="submit" value="O'zbekiston" name = "region", style="border: none; text-align: center; background-color: transparent; width: 100%; height: 100%; color: #E9ECF1; font-size: 20px;">                        
+            </form>
+                {% for viloyat in viloyatlar %}
+                <form class="links-wrapper" method="get" , action="">
+                        <input type="submit" value="{{viloyat.1}}" name = "region", style="border: none; text-align: center; background-color: transparent; width: 100%; height: 100%; color: #E9ECF1; font-size: 20px;">                        
+                </form>
+                {% endfor %}
+                
+            </div>
+        </div>
+        <!-- sidebar ***************************************** -->
+
+        <!-- map content ************************************* -->
+        <div class="map-content">
+            <div id="map"></div>
+        </div>
+    </div>
+    <!-- map content ************************************* -->
+    </section>
+
+    <!-- js link  start -->
+    <div style="display: none" class="jsonreg">
+        <div style="display: none" id="regx" data-json="{{reg.x}}"></div> 
+            <div style="display: none" id="regy" data-json="{{reg.y}}"></div> 
+            <div style="display: none" id="regzoom" data-json="{{reg.zoom}}"></div> 
+    </div>
+    {% for y in hayvonlar %}
+    <div style="display: none" class="jsonData">
+       
+            <div style="display: none" id="objid" data-json="{{y.id}}"></div> 
+            <div style="display: none" id="objx" data-json="{{y.x}}"></div> 
+            <div style="display: none" id="objy" data-json="{{y.y}}"></div> 
+            <div style="display: none" id="objimgurl" data-json="{{y.img}}"></div> 
+            <div style="display: none" id="objnomi"  data-json="{{y.name}}"></div> 
+            <div style="display: none" id="objtype"  data-json="{{y.type}}"></div> 
+             
+    </div>
+    {% endfor %}
+    <!-- <script src="{% static 'map.js' %}"></script> -->
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=58ce0551-106a-4330-bc54-837dabd084be"
+        type="text/javascript"></script>
+        <script src="{% static 'regions.js' %}"></script>
+        <!-- <script>create();</script> -->
+        
+    <!-- js link  end -->
+</body>
+
+</html>

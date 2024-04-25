@@ -1,0 +1,66 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'modal.css' %}">
+</head>
+<body>
+    <div class="inner-content">
+		<div class="inner-wrapper">
+			<div class="picture-blog" style="display: flex; justify-content: space-between;">
+				<img src="{{ hayvon.img.url }}" alt="....." style="width: 300px; height: auto; margin: auto;">
+			</div>
+			<div class="comment-blog" style="padding: 20px; display: grid; grid-template-columns: 45% 45%; justify-content: space-around;">
+				<div>
+                    <div class="blog">
+                        <h3 style="color: black;">Nomi</h3>
+                        <p>{{hayvon.nomi}}</p>
+                    </div>
+                    <br>
+                    <div class="blog">
+                        <h3 style="color: black;">Maqomi</h3>
+                        <p>{{hayvon.maqomi}}</p>
+                    </div>
+                    <br>
+                    <div class="blog">
+                        <h3 style="color: black;">Tarqalishi</h3>
+                        <p>{{hayvon.tarqalishi}}</p>
+                    </div>
+                    <br>
+                    <div class="blog">
+                        <h3 style="color: black;">Yashash Joylari</h3>
+                        <p>{{hayvon.yashash_joylari}}</p>
+                    </div>
+                    <br>
+                </div>
+				<div>
+                    <div class="blog">
+                        <h3 style="color: black;">Soni</h3>
+                        <p>{{hayvon.soni}}</p>
+                    </div>
+                    <br>
+                    <div class="blog">
+                        <h3 style="color: black;">Yasash Tarzi</h3>
+                        <p>{{hayvon.yashash_tarzi}}</p>
+                    </div>
+                    <br>
+                    <div class="blog">
+                        <h3 style="color: black;">Ko'paytirish Holati</h3>
+                        <p>{{hayvon.kupaytirish}}</p>
+                    </div>
+                    <br>
+                    <div class="blog">
+                        <h3 style="color: black;">Muhofaza choralari</h3>
+                        <p>{{hayvon.choralari}}</p>
+                    </div>    
+                </div>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'modal.css' %}">
+</head>
+<body>
+    <div class="inner-content">
+		<div class="inner-wrapper">
+			<div class="picture-blog">
+				<h1 class="picture-blog-name">{{osimlik.nomi}}</h1>
+				<img src="{{ osimlik.img.url }}" alt=".....">
+			</div>
+			<div class="comment-blog">
+				<div class="blog">
+                    <h3>Nomi</h3>
+                    <p>{{osimlik.nomi}}</p>
+                </div>
+				<div class="blog">
+                    <h3>Maqomi</h3>
+                    <p>{{osimlik.maqomi}}</p>
+                </div>
+				<div class="blog">
+                    <h3>Tavsif</h3>
+                    <p>{{osimlik.tavsif}}</p>
+                </div>
+				<div class="blog">
+                    <h3>Tarqalishi</h3>
+                    <p>{{osimlik.tarqalishi}}</p>
+                </div>
+				<div class="blog">
+                    <h3>O'sish Sharoiti</h3>
+                    <p>{{osimlik.sharoiti}}</p>
+                </div>
+				<div class="blog">
+                    <h3>Soni</h3>
+                    <p>{{osimlik.soni}}</p>
+                </div>
+				<div class="blog">
+                    <h3>Ma'daniylashtirish</h3>
+                    <p>{{osimlik.madaniylashtirish}}</p>
+                </div>
+				<div class="blog">
+                    <h3>Ko'paytirish</h3>
+                    <p>{{osimlik.kupayishi}}</p>
+                </div>
+				<div class="blog">
+                    <h3>Muhofaza choralari</h3>
+                    <p>{{osimlik.muhofaza_choralari}}</p>
+                </div>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>
